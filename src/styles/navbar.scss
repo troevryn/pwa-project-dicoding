@@ -84,6 +84,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+  padding: 10px;
   border: none;
   outline: none;
   background-color: transparent;
@@ -100,5 +101,7 @@
   }
   #hamburger {
     display: none;
+    min-height: 44px;
+  min-width: 44px;
   }
 }

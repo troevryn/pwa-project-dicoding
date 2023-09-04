@@ -49,6 +49,8 @@
   "dependencies": {
     "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.11",
+    "workbox-routing": "^7.0.0",
+    "workbox-strategies": "^7.0.0",
     "workbox-window": "^6.5.3"
   }
 }

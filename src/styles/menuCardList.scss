@@ -6,6 +6,11 @@ $line-clamp: 3;
         font-size: 2rem;
         margin: 0;
     }
+    a{
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-block;
+    }
 }
 .content-grid {
   display: grid;

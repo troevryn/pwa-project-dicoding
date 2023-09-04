@@ -19,11 +19,7 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', async () => {
-  document.querySelectorAll('a, button, input').forEach((e) => {
-    if (e.offsetWidth < 44 || e.offsetHeight < 44) {
-      console.log(e);
-    }
-  });
   app.renderPage();
+
   await swRegister();
 });
