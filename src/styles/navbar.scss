@@ -1,0 +1,104 @@
+#nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+    min-height: 44px;
+    min-width: 44px;
+    a {
+      padding: 1rem;
+      display: inline-block;
+    }
+    :hover {
+      color: #a7a5a5;
+    }
+  }
+  h1 {
+    margin: 0;
+  }
+}
+.nav-item {
+  display: none;
+}
+#nav-mobile {
+  width: 250px;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  color: black;
+  z-index: 9999;
+  /* menyembunyikan #drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+  transform: translate(-250px, 0);
+  transition: transform 0.3s ease-in-out;
+  background-color: #dadada;
+  padding: 1rem;
+  li {
+    list-style-type: none;
+    min-height: 44px;
+    min-width: 44px;
+    border-radius: 12px;
+    a {
+      padding: 1rem;
+      display: inline-block;
+      border-radius: 12px;
+
+      width: 100%;
+    }
+    :hover {
+      background-color: #a7a5a5;
+    }
+  }
+  ul {
+    margin: 0;
+    margin-top: 1rem;
+    padding: 0;
+  }
+  h1 {
+    margin: 0;
+  }
+}
+#nav-mobile.open {
+  transform: translate(0, 0);
+}
+
+.bg-overlay {
+  background: black;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+}
+#hamburger {
+  display: block;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 480px) {
+}
+
+@media screen and (min-width: 768px) {
+  .nav-item {
+    display: flex;
+    gap: 1rem;
+  }
+  #hamburger {
+    display: none;
+  }
+}
