@@ -11,7 +11,6 @@ const LikeButtonInitiator = {
 
   async _renderButton() {
     const { id } = this._restorant;
-
     if (await this._isRestorantExist(id)) {
       this._renderLiked();
     } else {
@@ -20,15 +19,20 @@ const LikeButtonInitiator = {
   },
 
   async _isRestorantExist(id) {
-    const restorant = await FavoriteRestorantIdb.getRestorant(id);
-    return !!restorant;
+    let restorantTemp = null;
+    if (id) {
+      restorantTemp = await FavoriteRestorantIdb.getRestorant(id);
+    }
+    return !!restorantTemp;
   },
 
   _renderLike() {
     this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestorantIdb.putRestorant(this._restorant);
+      if (this._restorant.id) {
+        await FavoriteRestorantIdb.putRestorant(this._restorant);
+      }
       this._renderButton();
     });
   },

@@ -5,7 +5,7 @@ import CONFIG from '../../globals/config';
 const createCardRestaurantTemplate = (restaurant) => `
 <div class="content-grid-child">
         <img src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.name}"  />
-        <div>
+        <div class="item-restaurant">
             <h4><a href="/#/detail/${restaurant.id}">${restaurant.name}</a> </h4>
 
             <p class="truncate">${restaurant.description}</p>
@@ -98,13 +98,13 @@ const createRestaurantTemplateDetail = (restaurant) => `
   </div>
 `;
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+  <button aria-label="like this restorant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+  <button aria-label="unlike this restorant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
