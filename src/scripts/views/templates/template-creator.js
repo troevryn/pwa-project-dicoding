@@ -4,7 +4,12 @@ import CONFIG from '../../globals/config';
 /* eslint-disable import/prefer-default-export */
 const createCardRestaurantTemplate = (restaurant) => `
 <div class="content-grid-child">
-        <img src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.name}"  />
+
+<picture>
+<source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}">
+<img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}" alt="${restaurant.name}"  />
+    </picture>
+       
         <div class="item-restaurant">
             <h4><a href="/#/detail/${restaurant.id}">${restaurant.name}</a> </h4>
 
@@ -35,9 +40,9 @@ const createCustomerReviewTemplate = (customers) => {
   customers.map((customer) => {
     const divElementChild = document.createElement('div');
     divElementChild.classList.add('customer-card');
-    divElementChild.innerHTML += `<p>${customer.name}</p>`;
-    divElementChild.innerHTML += `<p>${customer.review}</p>`;
-    divElementChild.innerHTML += `<p>${customer.date}</p>`;
+    divElementChild.innerHTML += `<p class="customer-name">${customer.name}</p>`;
+    divElementChild.innerHTML += `<p class="customer-description">${customer.review}</p>`;
+    divElementChild.innerHTML += `<p class="customer-date">${customer.date}</p>`;
     divElement.innerHTML += divElementChild.outerHTML;
   });
   return `${divElement.outerHTML}`;
@@ -118,5 +123,6 @@ export {
   createRestaurantTemplateDetail,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
-  createDataNotFound, createCustomerReviewTemplate,
+  createDataNotFound,
+  createCustomerReviewTemplate,
 };

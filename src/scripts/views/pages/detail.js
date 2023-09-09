@@ -40,8 +40,8 @@ const Detail = {
     });
     FormInputReviewInitiator.init({
       buttonSubmit: document.querySelector('#saveReview'),
-      inputDescription: document.querySelector('#customerNameInput'),
-      inputName: document.querySelector('#customerDescriptionInput'),
+      inputDescription: document.querySelector('#customerDescriptionInput'),
+      inputName: document.querySelector('#customerNameInput'),
       id: url.id,
     });
   },
